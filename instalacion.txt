@@ -1,0 +1,14 @@
+1) Instala SQL Server Express: https://www.microsoft.com/es-es/sql-server/sql-server-downloads
+
+2) Al acabar la instalación te preguntará si quieres instalar SSMS, acepta. Sino, aquí está el link: https://docs.microsoft.com/es-es/sql/ssms/download-sql-server-management-studio-ssms?redirectedfrom=MSDN&view=sql-server-ver15
+
+3) En Visual Studio, ir a "Herramientas", "Obtener Herramientas y Características" e instalar "Almacenamiento y Procesamiento de Datos", las tres primeras opciones.
+
+3) Abre SQL Server Management Studio, conectate al servidor Express (con la cuenta de Windows, es automático), y crea una base de datos con sus tablas.
+
+4) En Visual Studio ya puedes añadir el Entity Data Model, al poner lo de "New Connection" te pedira un "Server Name", tienes que poner "(local)SQLSEXPRESS" a mano, no sale ninguna lista de opciones. Después ya te saldrá tu base de datos creada en tu servidor para que la selecciones.
+
+
+EXTRAS:
+
+1) SQL Server Configuration Manager (programa incluido en la instalación de SQL Server) te permite ver que servidores tienes ejecutándose.
