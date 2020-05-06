@@ -2,7 +2,10 @@
 
 2) Al acabar la instalación te preguntará si quieres instalar SSMS, acepta. Sino, aquí está el link: https://docs.microsoft.com/es-es/sql/ssms/download-sql-server-management-studio-ssms?redirectedfrom=MSDN&view=sql-server-ver15
 
-3) En Visual Studio, ir a "Herramientas", "Obtener Herramientas y Características" e instalar "Almacenamiento y Procesamiento de Datos", las tres primeras opciones.
+3) En Visual Studio, ir a "Herramientas", "Obtener Herramientas y Características" e instalar
+	- "Desarrollo de Escritorio de .NET"
+	- "Desarrollo de la Plataforma Universal de Windows"
+	- "Almacenamiento y Procesamiento de Datos".
 
 3) Abre SQL Server Management Studio, conectate al servidor Express (con la cuenta de Windows, es automático), y crea una base de datos con sus tablas.
 
