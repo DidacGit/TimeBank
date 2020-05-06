@@ -1,0 +1,15 @@
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\bin\Debug\TimeBank.exe.config
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\bin\Debug\TimeBank.exe
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\bin\Debug\TimeBank.pdb
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\bin\Debug\EntityFramework.dll
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\bin\Debug\EntityFramework.xml
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\obj\Debug\TimeBank.csprojAssemblyReference.cache
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\obj\Debug\TimeBank.Properties.Resources.resources
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\obj\Debug\TimeBank.csproj.GenerateResource.cache
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\obj\Debug\TimeBank.csproj.CoreCompileInputs.cache
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\obj\Debug\TimeBank.csproj.CopyComplete
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\obj\Debug\TimeBank.exe
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\obj\Debug\TimeBank.pdb
+C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\obj\Debug\TimeBank.AddPersonForm.resources
