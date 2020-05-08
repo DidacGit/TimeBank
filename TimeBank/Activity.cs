@@ -20,6 +20,7 @@ namespace TimeBank
         public System.DateTime endDate { get; set; }
         public int userConsumer { get; set; }
         public int userProducer { get; set; }
+        public int hours { get; set; }
     
         public virtual Person Person { get; set; }
         public virtual Person Person1 { get; set; }

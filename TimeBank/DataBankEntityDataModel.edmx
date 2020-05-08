@@ -11,6 +11,7 @@
           </Key>
           <Property Name="activityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="activityName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="hours" Type="int" Nullable="false" />
           <Property Name="startDate" Type="date" Nullable="false" />
           <Property Name="endDate" Type="date" Nullable="false" />
           <Property Name="userConsumer" Type="int" Nullable="false" />
@@ -104,6 +105,7 @@
           <Property Name="userProducer" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Person" Relationship="TimeBankModel.fk_users_consumer" FromRole="Activity" ToRole="Person" />
           <NavigationProperty Name="Person1" Relationship="TimeBankModel.fk_users_producer" FromRole="Activity" ToRole="Person" />
+          <Property Name="hours" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="fk_users_consumer">
           <End Type="TimeBankModel.Person" Role="Person" Multiplicity="1" />
@@ -150,6 +152,7 @@
           <EntitySetMapping Name="Activities">
             <EntityTypeMapping TypeName="TimeBankModel.Activity">
               <MappingFragment StoreEntitySet="Activity">
+                <ScalarProperty Name="hours" ColumnName="hours" />
                 <ScalarProperty Name="userProducer" ColumnName="userProducer" />
                 <ScalarProperty Name="userConsumer" ColumnName="userConsumer" />
                 <ScalarProperty Name="endDate" ColumnName="endDate" />

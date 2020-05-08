@@ -23,6 +23,7 @@ values ('Marta', '612783233', 'marta@mail.com', 15, 'martapass')
 create table Activity (
   activityId int identity(1,1) primary key,
   activityName varchar(100) not null,
+  hours int not null,
   startDate date not null,
   endDate date not null,
   userConsumer int not null,
@@ -34,5 +35,5 @@ create table Activity (
 	foreign key (userConsumer)
 	references Person (userId))
 
-insert into Activity (activityName, startDate, endDate, userConsumer, userProducer)
-values ('Actividad Uno', getdate(), getdate(), 1, 2)
+insert into Activity (activityName, hours, startDate, endDate, userConsumer, userProducer)
+values ('Actividad Uno', 5, getdate(), getdate(), 1, 2)

@@ -37,6 +37,7 @@
     <Property Name="userProducer" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Person" Relationship="TimeBankModel.fk_users_consumer" FromRole="Activity" ToRole="Person" />
     <NavigationProperty Name="Person1" Relationship="TimeBankModel.fk_users_producer" FromRole="Activity" ToRole="Person" />
+    <Property Name="hours" Type="Int32" Nullable="false" />
   </EntityType>
   <Association Name="fk_users_consumer">
     <End Type="TimeBankModel.Person" Role="Person" Multiplicity="1" />

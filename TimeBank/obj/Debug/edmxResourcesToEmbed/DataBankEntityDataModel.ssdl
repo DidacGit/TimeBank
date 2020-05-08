@@ -6,6 +6,7 @@
     </Key>
     <Property Name="activityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="activityName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="hours" Type="int" Nullable="false" />
     <Property Name="startDate" Type="date" Nullable="false" />
     <Property Name="endDate" Type="date" Nullable="false" />
     <Property Name="userConsumer" Type="int" Nullable="false" />

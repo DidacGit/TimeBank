@@ -39,6 +39,8 @@
             this.phoneTextBox = new System.Windows.Forms.TextBox();
             this.hoursLabel = new System.Windows.Forms.Label();
             this.hoursTextBox = new System.Windows.Forms.TextBox();
+            this.transactionButton = new System.Windows.Forms.Button();
+            this.deletePersonButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // nameTextBox
@@ -81,7 +83,7 @@
             this.addPersonButton.TabIndex = 4;
             this.addPersonButton.Text = "Add Person";
             this.addPersonButton.UseVisualStyleBackColor = true;
-            this.addPersonButton.Click += new System.EventHandler(this.button1_Click_1);
+            this.addPersonButton.Click += new System.EventHandler(this.addPersonButtonClick);
             // 
             // emailLabel
             // 
@@ -132,11 +134,33 @@
             this.hoursTextBox.TabIndex = 10;
             this.hoursTextBox.Text = "5 (fixed)";
             // 
+            // transactionButton
+            // 
+            this.transactionButton.Location = new System.Drawing.Point(485, 348);
+            this.transactionButton.Name = "transactionButton";
+            this.transactionButton.Size = new System.Drawing.Size(75, 23);
+            this.transactionButton.TabIndex = 11;
+            this.transactionButton.Text = "Transaction";
+            this.transactionButton.UseVisualStyleBackColor = true;
+            this.transactionButton.Click += new System.EventHandler(this.transactionButtonClick);
+            // 
+            // deletePersonButton
+            // 
+            this.deletePersonButton.Location = new System.Drawing.Point(607, 348);
+            this.deletePersonButton.Name = "deletePersonButton";
+            this.deletePersonButton.Size = new System.Drawing.Size(105, 23);
+            this.deletePersonButton.TabIndex = 12;
+            this.deletePersonButton.Text = "Delete Person";
+            this.deletePersonButton.UseVisualStyleBackColor = true;
+            this.deletePersonButton.Click += new System.EventHandler(this.deletePersonButtonClick);
+            // 
             // AddPersonForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.deletePersonButton);
+            this.Controls.Add(this.transactionButton);
             this.Controls.Add(this.hoursTextBox);
             this.Controls.Add(this.hoursLabel);
             this.Controls.Add(this.passwordLabel);
@@ -168,6 +192,8 @@
         private System.Windows.Forms.TextBox phoneTextBox;
         private System.Windows.Forms.Label hoursLabel;
         private System.Windows.Forms.TextBox hoursTextBox;
+        private System.Windows.Forms.Button transactionButton;
+        private System.Windows.Forms.Button deletePersonButton;
     }
 }
 

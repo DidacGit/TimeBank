@@ -16,6 +16,7 @@
     <EntitySetMapping Name="Activities">
       <EntityTypeMapping TypeName="TimeBankModel.Activity">
         <MappingFragment StoreEntitySet="Activity">
+          <ScalarProperty Name="hours" ColumnName="hours" />
           <ScalarProperty Name="userProducer" ColumnName="userProducer" />
           <ScalarProperty Name="userConsumer" ColumnName="userConsumer" />
           <ScalarProperty Name="endDate" ColumnName="endDate" />

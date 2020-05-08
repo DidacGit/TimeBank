@@ -18,7 +18,7 @@ namespace TimeBank
             InitializeComponent();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void addPersonButtonClick(object sender, EventArgs e)
         {
             Person person = new Person();
             person.userName = nameTextBox.Text;
@@ -26,15 +26,22 @@ namespace TimeBank
             person.email = emailTextBox.Text;
             person.phone = phoneTextBox.Text;
             person.hours = 5;
-            //ManageDB.addPerson(person);
-
-            Person helena = ManageDB.findPerson(2);
-            Person marcos = ManageDB.findPerson(1);
-            ManageDB.transferHours(helena, marcos, 5);
-            //ManageDB.removePerson(helena);
-            //Debug.WriteLine(helena);
-
+            ManageDB.addPerson(person);
         }
 
+        private void transactionButtonClick(object sender, EventArgs e)
+        {
+            // Helena le pasa dos horas a Marcos (por ejemplo)
+            Person helena = ManageDB.findPerson(2);
+            Person marcos = ManageDB.findPerson(1);
+            ManageDB.transferHours(helena, marcos, 2);
+        }
+
+        private void deletePersonButtonClick(object sender, EventArgs e)
+        {
+            // Eliminamos a Marta (por ejemplo)
+            Person marta = ManageDB.findPerson(3);
+            ManageDB.removePerson(marta);
+        }
     }
 }
