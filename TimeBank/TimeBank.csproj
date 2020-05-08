@@ -61,6 +61,7 @@
     <Compile Include="AddPersonForm.Designer.cs">
       <DependentUpon>AddPersonForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ManageDB.cs" />
     <Compile Include="DataBankEntityDataModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,6 @@ namespace TimeBank
 {
     public partial class AddPersonForm : Form
     {
-        TimeBankEntities entities = new TimeBankEntities();
         public AddPersonForm()
         {
             InitializeComponent();
@@ -26,8 +26,10 @@ namespace TimeBank
             person.email = emailTextBox.Text;
             person.phone = phoneTextBox.Text;
             person.hours = 5;
-            entities.People.Add(person);
-            entities.SaveChanges();
+            ManageDB.addPerson(person);
+            //Person helena = ManageDB.findPerson(2);
+            //ManageDB.removePerson(helena);
+            //Debug.WriteLine(helena);
         }
 
     }
