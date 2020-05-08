@@ -26,10 +26,14 @@ namespace TimeBank
             person.email = emailTextBox.Text;
             person.phone = phoneTextBox.Text;
             person.hours = 5;
-            ManageDB.addPerson(person);
-            //Person helena = ManageDB.findPerson(2);
+            //ManageDB.addPerson(person);
+
+            Person helena = ManageDB.findPerson(2);
+            Person marcos = ManageDB.findPerson(1);
+            ManageDB.transferHours(helena, marcos, 5);
             //ManageDB.removePerson(helena);
             //Debug.WriteLine(helena);
+
         }
 
     }

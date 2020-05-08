@@ -13,5 +13,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Activities">
+      <EntityTypeMapping TypeName="TimeBankModel.Activity">
+        <MappingFragment StoreEntitySet="Activity">
+          <ScalarProperty Name="userProducer" ColumnName="userProducer" />
+          <ScalarProperty Name="userConsumer" ColumnName="userConsumer" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+          <ScalarProperty Name="startDate" ColumnName="startDate" />
+          <ScalarProperty Name="activityName" ColumnName="activityName" />
+          <ScalarProperty Name="activityId" ColumnName="activityId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

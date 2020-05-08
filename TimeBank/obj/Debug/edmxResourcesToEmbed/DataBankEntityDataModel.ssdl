@@ -1,5 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="TimeBankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="activityId" />
+    </Key>
+    <Property Name="activityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="activityName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="startDate" Type="date" Nullable="false" />
+    <Property Name="endDate" Type="date" Nullable="false" />
+    <Property Name="userConsumer" Type="int" Nullable="false" />
+    <Property Name="userProducer" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="Person">
     <Key>
       <PropertyRef Name="userId" />
@@ -11,7 +22,40 @@
     <Property Name="hours" Type="int" Nullable="false" />
     <Property Name="password" Type="varchar" MaxLength="100" Nullable="false" />
   </EntityType>
+  <Association Name="fk_users_consumer">
+    <End Role="Person" Type="Self.Person" Multiplicity="1" />
+    <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="userConsumer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_users_producer">
+    <End Role="Person" Type="Self.Person" Multiplicity="1" />
+    <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="userProducer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="TimeBankModelStoreContainer">
+    <EntitySet Name="Activity" EntityType="Self.Activity" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_users_consumer" Association="Self.fk_users_consumer">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="Activity" EntitySet="Activity" />
+    </AssociationSet>
+    <AssociationSet Name="fk_users_producer" Association="Self.fk_users_producer">
+      <End Role="Person" EntitySet="Person" />
+      <End Role="Activity" EntitySet="Activity" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

@@ -14,11 +14,23 @@ namespace TimeBank
     
     public partial class Person
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Person()
+        {
+            this.Activities = new HashSet<Activity>();
+            this.Activities1 = new HashSet<Activity>();
+        }
+    
         public int userId { get; set; }
         public string userName { get; set; }
         public string phone { get; set; }
         public string email { get; set; }
         public int hours { get; set; }
         public string password { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Activity> Activities { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Activity> Activities1 { get; set; }
     }
 }

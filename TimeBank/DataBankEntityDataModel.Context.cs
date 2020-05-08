@@ -26,5 +26,6 @@ namespace TimeBank
         }
     
         public virtual DbSet<Person> People { get; set; }
+        public virtual DbSet<Activity> Activities { get; set; }
     }
 }

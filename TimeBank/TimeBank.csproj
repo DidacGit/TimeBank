@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Activity.cs">
+      <DependentUpon>DataBankEntityDataModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="AddPersonForm.cs">
       <SubType>Form</SubType>
     </Compile>
