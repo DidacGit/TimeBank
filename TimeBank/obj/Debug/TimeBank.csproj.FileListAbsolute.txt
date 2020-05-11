@@ -13,3 +13,19 @@ C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\T
 C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\obj\Debug\TimeBank.exe
 C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\obj\Debug\TimeBank.pdb
 C:\Users\didac\Documents\(ICB0_P6) Técnicas de persistencia de datos con .NET\TimeBank\TimeBank\obj\Debug\TimeBank.AddPersonForm.resources
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\bin\Debug\TimeBank.exe.config
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\bin\Debug\TimeBank.exe
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\bin\Debug\TimeBank.pdb
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\bin\Debug\EntityFramework.dll
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\bin\Debug\EntityFramework.xml
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.csprojAssemblyReference.cache
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.Properties.Resources.resources
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.csproj.GenerateResource.cache
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.csproj.CoreCompileInputs.cache
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.csproj.CopyComplete
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.exe
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.pdb
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.Login.resources
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.Register.resources

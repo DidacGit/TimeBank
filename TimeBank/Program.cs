@@ -16,7 +16,7 @@ namespace TimeBank
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddPersonForm());
+            Application.Run(new Login());
         }
     }
 }

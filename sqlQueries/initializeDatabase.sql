@@ -7,7 +7,7 @@ create table TimeBank.dbo.Person (
   userId int identity(1,1) primary key,
   userName varchar(100) not null,
   phone varchar(100) not null,
-  email varchar(100) not null,
+  email varchar(100) unique not null,
   hours int not null default 0,
   password varchar(100) not null)
 

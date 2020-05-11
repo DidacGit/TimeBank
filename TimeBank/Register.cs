@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace TimeBank
 {
-    public partial class AddPersonForm : Form
+    public partial class Register : Form
     {
-        public AddPersonForm()
+        public Register()
         {
             InitializeComponent();
         }

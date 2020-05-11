@@ -9,9 +9,11 @@ using System.Windows.Forms;
 
 namespace TimeBank
 {
+    public enum loginOptions { EMAIL_ERROR, PASSWORD_ERROR, CORRECT };
     // Class to manage the access to the data base
     class ManageDB
     {
+        public static Person myPerson;
         static TimeBankEntities entities = new TimeBankEntities();
         public static void addPerson(Person person)
         {
@@ -53,5 +55,30 @@ namespace TimeBank
                 return true;
             }
         }
+
+        public static loginOptions checkLogin(string mail, string password)
+        {
+            myPerson = entities.People
+                    .Where(p => p.email == mail)
+                    .FirstOrDefault();
+            if (myPerson != null)
+            {
+                if(myPerson.password.Equals(password))
+                    return loginOptions.CORRECT;
+                else
+                    return loginOptions.PASSWORD_ERROR;
+            }
+            else
+                return loginOptions.EMAIL_ERROR;
+        }
+
+
+        ////Check
+        //public static Person login()
+        //{
+
+        //}
+
     }
 }
+
