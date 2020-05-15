@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="TimeBankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="TimeBankModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Activity">
           <Key>
             <PropertyRef Name="activityId" />
@@ -12,8 +12,7 @@
           <Property Name="activityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="activityName" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="hours" Type="int" Nullable="false" />
-          <Property Name="startDate" Type="date" Nullable="false" />
-          <Property Name="endDate" Type="date" Nullable="false" />
+          <Property Name="activityDate" Type="date" Nullable="false" />
           <Property Name="userConsumer" Type="int" Nullable="false" />
           <Property Name="userProducer" Type="int" Nullable="false" />
         </EntityType>
@@ -64,10 +63,24 @@
             <End Role="Activity" EntitySet="Activity" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="TimeBankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Activity">
+          <Key>
+            <PropertyRef Name="activityId" />
+          </Key>
+          <Property Name="activityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="activityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="hours" Type="Int32" Nullable="false" />
+          <Property Name="activityDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="userConsumer" Type="Int32" Nullable="false" />
+          <Property Name="userProducer" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Person" Relationship="Self.fk_users_consumer" FromRole="Activity" ToRole="Person" />
+          <NavigationProperty Name="Person1" Relationship="Self.fk_users_producer" FromRole="Activity" ToRole="Person" />
+        </EntityType>
         <EntityType Name="Person">
           <Key>
             <PropertyRef Name="userId" />
@@ -78,38 +91,12 @@
           <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="hours" Type="Int32" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
-          <NavigationProperty Name="Activities" Relationship="TimeBankModel.fk_users_consumer" FromRole="Person" ToRole="Activity" />
-          <NavigationProperty Name="Activities1" Relationship="TimeBankModel.fk_users_producer" FromRole="Person" ToRole="Activity" />
-        </EntityType>
-        <EntityContainer Name="TimeBankEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="People" EntityType="Self.Person" />
-          <EntitySet Name="Activities" EntityType="TimeBankModel.Activity" />
-          <AssociationSet Name="fk_users_consumer" Association="TimeBankModel.fk_users_consumer">
-            <End Role="Person" EntitySet="People" />
-            <End Role="Activity" EntitySet="Activities" />
-          </AssociationSet>
-          <AssociationSet Name="fk_users_producer" Association="TimeBankModel.fk_users_producer">
-            <End Role="Person" EntitySet="People" />
-            <End Role="Activity" EntitySet="Activities" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="Activity">
-          <Key>
-            <PropertyRef Name="activityId" />
-          </Key>
-          <Property Name="activityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="activityName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="startDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="endDate" Type="DateTime" Nullable="false" Precision="0" />
-          <Property Name="userConsumer" Type="Int32" Nullable="false" />
-          <Property Name="userProducer" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Person" Relationship="TimeBankModel.fk_users_consumer" FromRole="Activity" ToRole="Person" />
-          <NavigationProperty Name="Person1" Relationship="TimeBankModel.fk_users_producer" FromRole="Activity" ToRole="Person" />
-          <Property Name="hours" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Activities" Relationship="Self.fk_users_consumer" FromRole="Person" ToRole="Activity" />
+          <NavigationProperty Name="Activities1" Relationship="Self.fk_users_producer" FromRole="Person" ToRole="Activity" />
         </EntityType>
         <Association Name="fk_users_consumer">
-          <End Type="TimeBankModel.Person" Role="Person" Multiplicity="1" />
-          <End Type="TimeBankModel.Activity" Role="Activity" Multiplicity="*" />
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="userId" />
@@ -120,8 +107,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="fk_users_producer">
-          <End Type="TimeBankModel.Person" Role="Person" Multiplicity="1" />
-          <End Type="TimeBankModel.Activity" Role="Activity" Multiplicity="*" />
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Person">
               <PropertyRef Name="userId" />
@@ -131,12 +118,36 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="TimeBankEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Activities" EntityType="Self.Activity" />
+          <EntitySet Name="People" EntityType="Self.Person" />
+          <AssociationSet Name="fk_users_consumer" Association="Self.fk_users_consumer">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Activity" EntitySet="Activities" />
+          </AssociationSet>
+          <AssociationSet Name="fk_users_producer" Association="Self.fk_users_producer">
+            <End Role="Person" EntitySet="People" />
+            <End Role="Activity" EntitySet="Activities" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="TimeBankModelStoreContainer" CdmEntityContainer="TimeBankEntities">
+        <EntityContainerMapping StorageEntityContainer="TimeBankModelStoreContainer" CdmEntityContainer="TimeBankEntities1">
+          <EntitySetMapping Name="Activities">
+            <EntityTypeMapping TypeName="TimeBankModel.Activity">
+              <MappingFragment StoreEntitySet="Activity">
+                <ScalarProperty Name="activityId" ColumnName="activityId" />
+                <ScalarProperty Name="activityName" ColumnName="activityName" />
+                <ScalarProperty Name="hours" ColumnName="hours" />
+                <ScalarProperty Name="activityDate" ColumnName="activityDate" />
+                <ScalarProperty Name="userConsumer" ColumnName="userConsumer" />
+                <ScalarProperty Name="userProducer" ColumnName="userProducer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="People">
             <EntityTypeMapping TypeName="TimeBankModel.Person">
               <MappingFragment StoreEntitySet="Person">
@@ -146,19 +157,6 @@
                 <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="hours" ColumnName="hours" />
                 <ScalarProperty Name="password" ColumnName="password" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Activities">
-            <EntityTypeMapping TypeName="TimeBankModel.Activity">
-              <MappingFragment StoreEntitySet="Activity">
-                <ScalarProperty Name="hours" ColumnName="hours" />
-                <ScalarProperty Name="userProducer" ColumnName="userProducer" />
-                <ScalarProperty Name="userConsumer" ColumnName="userConsumer" />
-                <ScalarProperty Name="endDate" ColumnName="endDate" />
-                <ScalarProperty Name="startDate" ColumnName="startDate" />
-                <ScalarProperty Name="activityName" ColumnName="activityName" />
-                <ScalarProperty Name="activityId" ColumnName="activityId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -179,7 +177,7 @@
         <DesignerProperty Name="EnablePluralization" Value="true" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
-        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

@@ -48,6 +48,14 @@ namespace TimeBank
             }
             if(showMessage)
                 MessageBox.Show(message);
+            else
+            {
+                this.Hide();
+                Home home = new Home();
+                home.ShowDialog();
+                
+                this.Close();
+            }
         }
 
         private void RegisterButton_Click(object sender, EventArgs e)

@@ -1,11 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="TimeBankModelStoreContainer" CdmEntityContainer="TimeBankEntities1">
-    <EntitySetMapping Name="Persons">
+    <EntitySetMapping Name="Activities">
+      <EntityTypeMapping TypeName="TimeBankModel.Activity">
+        <MappingFragment StoreEntitySet="Activity">
+          <ScalarProperty Name="activityId" ColumnName="activityId" />
+          <ScalarProperty Name="activityName" ColumnName="activityName" />
+          <ScalarProperty Name="hours" ColumnName="hours" />
+          <ScalarProperty Name="activityDate" ColumnName="activityDate" />
+          <ScalarProperty Name="userConsumer" ColumnName="userConsumer" />
+          <ScalarProperty Name="userProducer" ColumnName="userProducer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="People">
       <EntityTypeMapping TypeName="TimeBankModel.Person">
-        <MappingFragment StoreEntitySet="Persons">
-          <ScalarProperty Name="PersonId" ColumnName="PersonId" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
+        <MappingFragment StoreEntitySet="Person">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="hours" ColumnName="hours" />
+          <ScalarProperty Name="password" ColumnName="password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

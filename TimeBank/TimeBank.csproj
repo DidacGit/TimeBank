@@ -59,7 +59,22 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Activity.cs">
-      <DependentUpon>DataBankEntityDataModel.tt</DependentUpon>
+      <DependentUpon>TimeBankEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs">
+      <DependentUpon>TimeBankEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Profile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Profile.Designer.cs">
+      <DependentUpon>Profile.cs</DependentUpon>
     </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
@@ -74,26 +89,29 @@
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="ManageDB.cs" />
-    <Compile Include="DataBankEntityDataModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataBankEntityDataModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBankEntityDataModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataBankEntityDataModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBankEntityDataModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataBankEntityDataModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Person.cs">
-      <DependentUpon>DataBankEntityDataModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeBankEntityDataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimeBankEntityDataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeBankEntityDataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimeBankEntityDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TimeBankEntityDataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TimeBankEntityDataModel.edmx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Profile.resx">
+      <DependentUpon>Profile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Register.resx">
       <DependentUpon>Register.cs</DependentUpon>
     </EmbeddedResource>
@@ -109,13 +127,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EntityDeploy Include="DataBankEntityDataModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>DataBankEntityDataModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="DataBankEntityDataModel.edmx.diagram">
-      <DependentUpon>DataBankEntityDataModel.edmx</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -126,6 +137,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EntityDeploy Include="TimeBankEntityDataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>TimeBankEntityDataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="TimeBankEntityDataModel.edmx.diagram">
+      <DependentUpon>TimeBankEntityDataModel.edmx</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -137,15 +155,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DataBankEntityDataModel.Context.tt">
+    <Content Include="TimeBankEntityDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataBankEntityDataModel.edmx</DependentUpon>
-      <LastGenOutput>DataBankEntityDataModel.Context.cs</LastGenOutput>
+      <DependentUpon>TimeBankEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>TimeBankEntityDataModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="DataBankEntityDataModel.tt">
+    <Content Include="TimeBankEntityDataModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>DataBankEntityDataModel.edmx</DependentUpon>
-      <LastGenOutput>DataBankEntityDataModel.cs</LastGenOutput>
+      <DependentUpon>TimeBankEntityDataModel.edmx</DependentUpon>
+      <LastGenOutput>TimeBankEntityDataModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

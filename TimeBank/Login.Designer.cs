@@ -48,6 +48,7 @@
             this.mailTextBox.Size = new System.Drawing.Size(100, 22);
             this.mailTextBox.TabIndex = 0;
             this.mailTextBox.Tag = "";
+            this.mailTextBox.Text = "marcos@mail.com";
             // 
             // passwordTextBox
             // 
@@ -58,6 +59,7 @@
             this.passwordTextBox.PasswordChar = '*';
             this.passwordTextBox.Size = new System.Drawing.Size(100, 22);
             this.passwordTextBox.TabIndex = 1;
+            this.passwordTextBox.Text = "marcospass";
             // 
             // label1
             // 
@@ -128,6 +130,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1182, 633);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Login";
             this.Text = "Login";
             this.groupBox1.ResumeLayout(false);

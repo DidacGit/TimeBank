@@ -1,13 +1,65 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="TimeBankModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Activity">
+    <Key>
+      <PropertyRef Name="activityId" />
+    </Key>
+    <Property Name="activityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="activityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hours" Type="Int32" Nullable="false" />
+    <Property Name="activityDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="userConsumer" Type="Int32" Nullable="false" />
+    <Property Name="userProducer" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Person" Relationship="Self.fk_users_consumer" FromRole="Activity" ToRole="Person" />
+    <NavigationProperty Name="Person1" Relationship="Self.fk_users_producer" FromRole="Activity" ToRole="Person" />
+  </EntityType>
   <EntityType Name="Person">
     <Key>
-      <PropertyRef Name="PersonId" />
+      <PropertyRef Name="userId" />
     </Key>
-    <Property Name="PersonId" Type="Int32" Nullable="false" />
-    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="phone" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="hours" Type="Int32" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Activities" Relationship="Self.fk_users_consumer" FromRole="Person" ToRole="Activity" />
+    <NavigationProperty Name="Activities1" Relationship="Self.fk_users_producer" FromRole="Person" ToRole="Activity" />
   </EntityType>
+  <Association Name="fk_users_consumer">
+    <End Role="Person" Type="Self.Person" Multiplicity="1" />
+    <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="userConsumer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_users_producer">
+    <End Role="Person" Type="Self.Person" Multiplicity="1" />
+    <End Role="Activity" Type="Self.Activity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Person">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Activity">
+        <PropertyRef Name="userProducer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="TimeBankEntities1" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Persons" EntityType="Self.Person" />
+    <EntitySet Name="Activities" EntityType="Self.Activity" />
+    <EntitySet Name="People" EntityType="Self.Person" />
+    <AssociationSet Name="fk_users_consumer" Association="Self.fk_users_consumer">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Activity" EntitySet="Activities" />
+    </AssociationSet>
+    <AssociationSet Name="fk_users_producer" Association="Self.fk_users_producer">
+      <End Role="Person" EntitySet="People" />
+      <End Role="Activity" EntitySet="Activities" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

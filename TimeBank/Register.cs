@@ -20,28 +20,30 @@ namespace TimeBank
 
         private void addPersonButtonClick(object sender, EventArgs e)
         {
-            Person person = new Person();
-            person.userName = nameTextBox.Text;
-            person.password = passwordTextBox.Text;
-            person.email = emailTextBox.Text;
-            person.phone = phoneTextBox.Text;
-            person.hours = 5;
-            ManageDB.addPerson(person);
-        }
+            if (String.IsNullOrEmpty(nameTextBox.Text) ||
+                    String.IsNullOrEmpty(passwordTextBox.Text) ||
+                    String.IsNullOrEmpty(emailTextBox.Text) ||
+                    String.IsNullOrEmpty(phoneTextBox.Text))
+                MessageBox.Show("All the parameters must be filled");
+            else
+            {
+                if (ManageDB.checkIfMailExist(emailTextBox.Text))
+                {
+                    MessageBox.Show("The mail is already registered.");
+                }
+                else
+                {
+                    Person person = new Person();
+                    person.userName = nameTextBox.Text;
+                    person.password = passwordTextBox.Text;
+                    person.email = emailTextBox.Text;
+                    person.phone = phoneTextBox.Text;
+                    person.hours = 5;
+                    ManageDB.addPerson(person);
 
-        private void transactionButtonClick(object sender, EventArgs e)
-        {
-            // Helena le pasa dos horas a Marcos (por ejemplo)
-            Person helena = ManageDB.findPerson(2);
-            Person marcos = ManageDB.findPerson(1);
-            ManageDB.transferHours(helena, marcos, 2);
-        }
-
-        private void deletePersonButtonClick(object sender, EventArgs e)
-        {
-            // Eliminamos a Marta (por ejemplo)
-            Person marta = ManageDB.findPerson(3);
-            ManageDB.removePerson(marta);
+                    this.Close();
+                }
+            }
         }
     }
 }
