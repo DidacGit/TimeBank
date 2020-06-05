@@ -20,7 +20,6 @@ C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\bin\Debu
 C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\bin\Debug\EntityFramework.xml
 C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.csprojAssemblyReference.cache
 C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.Home.resources
 C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.Register.resources
 C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.Login.resources
@@ -31,3 +30,8 @@ C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debu
 C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.exe
 C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.pdb
 C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.Profile.resources
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\bin\Debug\TimeBank.exe.manifest
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\bin\Debug\TimeBank.application
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.csprojAssemblyReference.cache
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.exe.manifest
+C:\Users\josep\OneDrive\Documentos\UOC\FP\P6\Proyecto\TimeBank\TimeBank\obj\Debug\TimeBank.application

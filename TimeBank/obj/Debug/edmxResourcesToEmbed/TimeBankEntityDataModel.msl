@@ -2,8 +2,8 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="TimeBankModelStoreContainer" CdmEntityContainer="TimeBankEntities1">
     <EntitySetMapping Name="Activities">
-      <EntityTypeMapping TypeName="TimeBankModel.Activity">
-        <MappingFragment StoreEntitySet="Activity">
+      <EntityTypeMapping TypeName="IsTypeOf(TimeBankModel.Activity)">
+        <MappingFragment StoreEntitySet="Activities">
           <ScalarProperty Name="activityId" ColumnName="activityId" />
           <ScalarProperty Name="activityName" ColumnName="activityName" />
           <ScalarProperty Name="hours" ColumnName="hours" />
@@ -14,8 +14,8 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="People">
-      <EntityTypeMapping TypeName="TimeBankModel.Person">
-        <MappingFragment StoreEntitySet="Person">
+      <EntityTypeMapping TypeName="IsTypeOf(TimeBankModel.Person)">
+        <MappingFragment StoreEntitySet="People">
           <ScalarProperty Name="userId" ColumnName="userId" />
           <ScalarProperty Name="userName" ColumnName="userName" />
           <ScalarProperty Name="phone" ColumnName="phone" />
